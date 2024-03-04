@@ -1,6 +1,15 @@
 type Query {
   "A simple type for getting started!"
   hello: String
+  properties(city: String): [Listing]!
+}
+
+type Mutation {
+  incrementFav(input: IncrementFavInput): Listing
+}
+
+input IncrementFavInput {
+  listingId: String!
 }
 
 type Listing {
